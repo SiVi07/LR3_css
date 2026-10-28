@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт — CSS позиционирование</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #263548;
+        }
+
+        /* Заголовок сайта */
+        .header {
+            background-color: #cfe5f6;
+            text-align: center;
+            padding: 25px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        /* Горизонтальное меню */
+        .nav {
+            background-color: #34668a;
+            display: flow-root;
+        }
+
+        .nav a {
+            float: left;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+        }
+
+        .nav a:hover {
+            background-color: #244b6b;
+        }
+
+        /* Общая область трёх колонок */
+        .content {
+            padding: 15px;
+            display: flow-root;
+        }
+
+        /* Левая колонка */
+        .left {
+            float: left;
+            width: 20%;
+            background-color: #dcecf8;
+            padding: 15px;
+            min-height: 350px;
+        }
+
+        /* Правая колонка */
+        .right {
+            float: right;
+            width: 20%;
+            background-color: #dcecf8;
+            padding: 15px;
+            min-height: 350px;
+        }
+
+        /* Центральная колонка */
+        .center {
+            overflow: hidden;
+            padding: 15px;
+            background-color: white;
+            min-height: 350px;
+        }
+
+        /* Карточки в центре */
+        .card {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            width: 130px;
+            height: 130px;
+            margin: 8px;
+            background: linear-gradient(#b9e3f9, #74b3d8);
+            border: 2px solid #5798bf;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .card .symbol {
+            font-size: 55px;
+            padding-top: 25px;
+        }
+
+        /* Наплывающий блок */
+        .layer {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(20, 70, 120, 0.9);
+            color: white;
+            padding: 20px 10px;
+            transition: left 0.3s;
+        }
+
+        /* Появление пояснения */
+        .card:hover .layer {
+            left: 0;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #34668a;
+            color: white;
+            padding: 15px;
+        }
+
+        /* Для узкого экрана */
+        @media (max-width: 650px) {
+            .left, .right {
+                width: 24%;
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .center {
+                padding: 5px;
+            }
+
+            .card {
+                width: 105px;
+                height: 105px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    WEB DESIGN
+</header>
+
+<!-- Горизонтальное меню -->
+<nav class="nav">
+    <a href="#home">Главная</a>
+    <a href="#news">Новости</a>
+    <a href="#services">Услуги</a>
+    <a href="#contacts">Контакты</a>
+    <a href="#about">О нас</a>
+</nav>
+
+<div class="content">
+
+    <!-- Сначала левая колонка -->
+    <aside class="left">
+        <h3>Новости</h3>
+        <p>Добро пожаловать на наш сайт!</p>
+        <p>Здесь публикуются интересные материалы.</p>
+    </aside>
+
+    <!-- Затем правая колонка -->
+    <aside class="right">
+        <h3>Контакты</h3>
+        <p>Электронная почта:</p>
+        <p>info@example.com</p>
+
+        <h3>Услуги</h3>
+        <p>Разработка сайтов</p>
+        <p>Веб-дизайн</p>
+    </aside>
+
+    <!-- Центральная колонка строго последняя -->
+    <main class="center">
+        <h2>Наши направления</h2>
+
+        <div class="card">
+            <div class="symbol">🌐</div>
+            <div class="layer">
+                Создание сайтов
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="symbol">🎨</div>
+            <div class="layer">
+                Веб-дизайн
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="symbol">💻</div>
+            <div class="layer">
+                Программирование
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="symbol">📱</div>
+            <div class="layer">
+                Мобильные приложения
+            </div>
+        </div>
+    </main>
+
+</div>
+
+<footer class="footer">
+    Учебный проект по CSS
+</footer>
+
+</body>
+</html>

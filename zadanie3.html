@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Раскрывающееся меню</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+/* Основное меню */
+.menu {
+    width: 230px;
+}
+
+/* Пункты меню */
+.item > a {
+    display: block;
+    padding: 15px;
+    background: linear-gradient(#eeeeee, #bbbbbb);
+    border: 1px solid #aaa;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Наведение на пункт */
+.item > a:hover {
+    background: #a9cce3;
+}
+
+/* Подменю скрыто */
+.submenu {
+    display: none;
+}
+
+/* Подменю открывается внутри меню */
+.item:hover > .submenu {
+    display: block;
+}
+
+/* Ссылки подменю */
+.submenu a {
+    display: block;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    background: #eeeeee;
+    border: 1px solid #ccc;
+}
+
+.submenu a:hover {
+    background: #c6e2f5;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Раскрывающееся вертикальное меню</h2>
+
+<div class="menu">
+
+    <div class="item">
+        <a href="#">ГЛАВНАЯ</a>
+        <div class="submenu">
+            <a href="#">Главная страница</a>
+            <a href="#">Контакты</a>
+            <a href="#">О нас</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <a href="#">ОТДЕЛЫ ПРОДАЖ</a>
+    </div>
+
+    <div class="item">
+        <a href="#">ПОСТАВЩИКИ</a>
+        <div class="submenu">
+            <a href="#">ООО «Дизайн»</a>
+            <a href="#">ООО «Арт»</a>
+            <a href="#">ООО «Фотостиль»</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <a href="#">НАШИ УСЛУГИ</a>
+    </div>
+
+    <div class="item">
+        <a href="#">КОНТАКТЫ</a>
+    </div>
+
+    <div class="item">
+        <a href="#">О НАС</a>
+    </div>
+
+</div>
+
+</body>
+</html>
